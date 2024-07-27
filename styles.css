@@ -28,3 +28,9 @@
   margin: 2px;
   cursor: pointer;
 }
+
+#streak-display {
+  font-size: 14px;
+  color: #fcfaff;
+  margin-right: 10px;
+}

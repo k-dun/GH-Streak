@@ -67,7 +67,12 @@ function displayContributionSquares(container, contributionData) {
   const fourWeeksAgo = new Date(today);
   fourWeeksAgo.setDate(today.getDate() - 27);
 
-  for (let date = fourWeeksAgo; date <= today; date.setDate(date.getDate() + 1)) {
+  let currentStreak = 0;
+  let streakEnded = false;
+
+  const squares = [];
+
+  for (let date = today; date >= fourWeeksAgo; date.setDate(date.getDate() - 1)) {
     const formattedDate = date.toISOString().split('T')[0];
     
     const lookupDate = new Date(date);
@@ -80,10 +85,26 @@ function displayContributionSquares(container, contributionData) {
     contributionSquare.classList.add("contribution-square");
     contributionSquare.style.backgroundColor = contributionCount > 0 ? "#40c463" : "#ebedf0";
     contributionSquare.title = `${contributionCount} contribution${contributionCount !== 1 ? 's' : ''} on ${formattedDate}`;
-    contributionSquaresContainer.appendChild(contributionSquare);
+    
+    squares.unshift(contributionSquare);
+
+    if (!streakEnded) {
+      if (contributionCount > 0) {
+        currentStreak++;
+      } else {
+        streakEnded = true;
+      }
+    }
   }
 
+  squares.forEach(square => contributionSquaresContainer.appendChild(square));
+
+  const streakDisplay = document.createElement("div");
+  streakDisplay.id = "streak-display";
+  streakDisplay.textContent = `Current streak: ${currentStreak} day${currentStreak !== 1 ? 's' : ''}`;
+  
   container.appendChild(contributionSquaresContainer);
+  container.appendChild(streakDisplay);
 }
 
 createContributionBar();
