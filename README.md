@@ -11,7 +11,7 @@ A small Google Chrome extension that displays your last 28 days Github Contribut
 
 ## Features
 
-![Screenshot of the extension visible clearly on a website.](/assets/images/gh-streak-screenshot.png)
+![Screenshot of the extension visible clearly on a website.](gh-streak-screenshot.png)
 
 - Displays your GitHub contribution activity for the last 28 days
 - Shows your current contribution streak
