@@ -1,7 +1,8 @@
 #github-contribution-bar {
-  position: static;
+  position: sticky;
   width: 100%;
   height: 40px;
+  top: 0;
   background-color: #0d1117;
   opacity: 0.9;
   display: flex;
