@@ -21,10 +21,6 @@
   width: 15px;
   height: 15px;
   display: inline-block;
-  border-color: #0d1117;
-  border-style: solid;
-  border: 1px;
-  border-radius: 5%;
   margin: 2px;
   cursor: pointer;
 }

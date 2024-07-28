@@ -102,4 +102,4 @@ Contributions are welcome! Please feel free to submit a Pull Request, fork it, c
 
 ![Image of the designer v coder meme reflecting their ownership values.](license.png)
 
-This project is licensed under the DWYW (Do Whatever You Want) license. I am a big open-source fan anyway!
+Do as you will! I am a big open-source fan anyway.

@@ -83,7 +83,17 @@ function displayContributionSquares(container, contributionData) {
 
     const contributionSquare = document.createElement("div");
     contributionSquare.classList.add("contribution-square");
-    contributionSquare.style.backgroundColor = contributionCount > 0 ? "#40c463" : "#ebedf0";
+
+    if (contributionCount === 0) {
+      contributionSquare.style.backgroundColor = "#ebedf0";
+    } else if (contributionCount > 0 && contributionCount < 4) {
+      contributionSquare.style.backgroundColor = "#1c662f";
+    } else if (contributionCount > 3 && contributionCount < 7) {
+      contributionSquare.style.backgroundColor = "#2eab4f";
+    } else {
+      contributionSquare.style.backgroundColor = "#40ed6e";
+    }
+    
     contributionSquare.title = `${contributionCount} contribution${contributionCount !== 1 ? 's' : ''} on ${formattedDate}`;
     
     squares.unshift(contributionSquare);
