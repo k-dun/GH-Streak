@@ -3,6 +3,13 @@ function createContributionBar() {
   contributionBar.id = "github-contribution-bar";
   document.body.insertBefore(contributionBar, document.body.firstChild);
 
+  const toggleButton = createToggleButton();
+  contributionBar.appendChild(toggleButton);
+
+  toggleButton.addEventListener("click", function() {
+    document.body.removeChild(contributionBar);
+  });
+
   chrome.runtime.sendMessage({ action: "getContributionData" }, function (response) {
     if (response.error) {
       console.error("Error:", response.error);
@@ -12,6 +19,14 @@ function createContributionBar() {
       displayContributionSquares(contributionBar, contributionData);
     }
   });
+}
+
+function createToggleButton() {
+  const toggleButton = document.createElement("button");
+  toggleButton.id = "toggle-contribution-bar";
+  toggleButton.textContent = "Hide";
+  toggleButton.style.marginRight = "10px";
+  return toggleButton;
 }
 
 function parseContributionData(html) {

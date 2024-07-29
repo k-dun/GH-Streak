@@ -4,7 +4,8 @@
   "version": "1.0",
   "description": "Displays Github contribution squares and your current streak.",
   "permissions": [
-    "https://github.com/*"
+    "https://github.com/*",
+    "storage"
   ],
   "background": {
     "scripts": ["background.js"],
