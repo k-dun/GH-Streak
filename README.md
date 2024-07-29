@@ -74,6 +74,7 @@ If you need to change how data is fetched, modify background.js.
 
 ## Troubleshooting
 
+If the bar appears, but clearly negatively affects the website you are currently on, just press the 'Hide' button on the top left.
 If the bar doesn't appear, check the console for error messages.
 Ensure your GitHub username is correctly set in background.js.
 If changes don't appear, try reloading the extension in Chrome.
